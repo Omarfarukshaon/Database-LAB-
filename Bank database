@@ -1,0 +1,42 @@
+CREATE TABLE Branch (
+    BranchName VARCHAR(50) NOT NULL PRIMARY KEY,
+    BranchCity VARCHAR(50),
+    Assets INT
+);
+
+CREATE TABLE Customer (
+    CustomerID INT NOT NULL PRIMARY KEY,
+    CustomerName VARCHAR(50),
+    CustomerStreet VARCHAR(100),
+    CustomerCity VARCHAR(50)
+);
+
+CREATE TABLE Account (
+    AccountNumber INT NOT NULL PRIMARY KEY,
+    BranchName VARCHAR(50) NOT NULL,
+    Balance INT,
+    FOREIGN KEY (BranchName) REFERENCES Branch(BranchName) ON DELETE CASCADE
+);
+
+CREATE TABLE Loan (
+    LoanNumber INT NOT NULL PRIMARY KEY,
+    BranchName VARCHAR(50) NOT NULL,
+    Amount INT,
+    FOREIGN KEY (BranchName) REFERENCES Branch(BranchName) ON DELETE CASCADE
+);
+
+CREATE TABLE Depositor (
+    CustomerID INT NOT NULL,
+    AccountNumber INT NOT NULL,
+    PRIMARY KEY (CustomerID, AccountNumber),
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID) ON DELETE CASCADE,
+    FOREIGN KEY (AccountNumber) REFERENCES Account(AccountNumber) ON DELETE CASCADE
+);
+
+CREATE TABLE Borrower (
+    CustomerID INT NOT NULL,
+    LoanNumber INT NOT NULL,
+    PRIMARY KEY (CustomerID, LoanNumber),
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID) ON DELETE CASCADE,
+    FOREIGN KEY (LoanNumber) REFERENCES Loan(LoanNumber) ON DELETE CASCADE
+);
