@@ -11,11 +11,12 @@ CREATE TABLE Student (
     DOB DATE,
     Gender VARCHAR(50),
     Address VARCHAR(50),
-    Phone INT
+    Phone INT,
     Email VARCHAR(50),
     DepartmentID VARCHAR(50),
     FOREIGN KEY (DepartmentID) REFERENCES Department(DepartmentID) ON DELETE CASCADE
 );
+
 
 CREATE TABLE Course (
     CourseID INT NOT NULL PRIMARY KEY,
@@ -45,9 +46,10 @@ CREATE TABLE Enrollment (
     FOREIGN KEY (CourseID) REFERENCES Course(CourseID) ON DELETE CASCADE
 );
 
+
 CREATE TABLE Classroom (
     RoomNumber VARCHAR(50) NOT NULL PRIMARY KEY,
-    Building VARCHAR(50) NOT NULL PRIMARY KEY,
+    Building VARCHAR(50),
     Capacity INT
 );
 
@@ -111,6 +113,4 @@ INSERT INTO Classroom VALUES
 ('R101', 'Main Building', 40),   -- For CSE (CourseID 301)
 ('R202', 'Engineering Block', 35), -- For EEC (CourseID 302)
 ('R303', 'Business Tower', 30);   -- For BBA (CourseID 303)
-
-
 
