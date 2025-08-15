@@ -78,7 +78,9 @@ INSERT INTO Account VALUES
 INSERT INTO Loan VALUES
 (201, 'Dhanmondi', 10000),
 (202, 'Mirpur', 15000),
-(203, 'Uttara', 12000);
+(203, 'Uttara', 12000),
+(204, 'Uttara', 16000);
+
 
 INSERT INTO Depositor VALUES
 (1, 101), 
@@ -91,7 +93,8 @@ INSERT INTO Depositor VALUES
 INSERT INTO Borrower VALUES
 (1, 201),
 (2, 202), 
-(3, 203); 
+(3, 203),
+(4, 204);
 
 
 
