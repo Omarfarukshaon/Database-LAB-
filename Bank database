@@ -57,7 +57,8 @@ CREATE TABLE Borrower (
 INSERT INTO Branch VALUES 
 ('Dhanmondi', 'Dhaka', 100000),
 ('Uttara', 'Dhaka', 120000),
-('Mirpur', 'Dhaka', 90000);
+('Mirpur', 'Dhaka', 90000),
+('Gulshan', 'Dhaka', 180000);
 
 INSERT INTO Customer VALUES
 (1, 'Akash', 'Street 1', 'Dhaka'),
