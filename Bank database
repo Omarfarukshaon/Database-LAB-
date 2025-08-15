@@ -33,8 +33,8 @@ CREATE TABLE Loan (
 
 -- Create Depositor table
 CREATE TABLE Depositor (
-    CustomerID INT NOT NULL,
-    AccountNumber INT NOT NULL,
+    CustomerID INT,
+    AccountNumber INT,
     PRIMARY KEY(CustomerID, AccountNumber),
     FOREIGN KEY(CustomerID) REFERENCES Customer(CustomerID) ON DELETE CASCADE,
     FOREIGN KEY(AccountNumber) REFERENCES Account(AccountNumber) ON DELETE CASCADE
@@ -42,8 +42,8 @@ CREATE TABLE Depositor (
 
 -- Create Borrower table
 CREATE TABLE Borrower (
-    CustomerID INT NOT NULL,
-    LoanNumber INT NOT NULL,
+    CustomerID INT,
+    LoanNumber INT,
     PRIMARY KEY(CustomerID, LoanNumber),
     FOREIGN KEY(CustomerID) REFERENCES Customer(CustomerID) ON DELETE CASCADE,
     FOREIGN KEY(LoanNumber) REFERENCES Loan(LoanNumber) ON DELETE CASCADE
