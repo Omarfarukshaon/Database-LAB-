@@ -1,3 +1,5 @@
+--CREATION
+
 CREATE TABLE Branch (
     BranchName VARCHAR(50) NOT NULL PRIMARY KEY,
     BranchCity VARCHAR(50),
@@ -40,3 +42,50 @@ CREATE TABLE Borrower (
     FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID) ON DELETE CASCADE,
     FOREIGN KEY (LoanNumber) REFERENCES Loan(LoanNumber) ON DELETE CASCADE
 );
+
+
+--INSERTION:
+
+INSERT INTO Branch VALUES 
+('Dhanmondi', 'Dhaka', 100000),
+('Uttara', 'Dhaka', 120000),
+('Mirpur', 'Dhaka', 90000);
+
+INSERT INTO Customer VALUES
+(1, 'Akash', 'Street 1', 'Dhaka'),
+(2, 'Anis', 'Street 2', 'Dhaka'),
+(3, 'Sajid', 'Street 3', 'Dhaka'),
+(4, 'Rifat', 'Street 4', 'Dhaka'),
+(5, 'Shadhin', 'Street 5', 'Dhaka');
+
+
+INSERT INTO Account VALUES
+(101, 'Dhanmondi', 20000),
+(102, 'Dhanmondi', 30000),
+(103, 'Uttara', 25000),
+(104, 'Uttara', 40000),
+(105, 'Mirpur', 15000); 
+
+
+INSERT INTO Loan VALUES
+(201, 'Uttara', 10000),
+(202, 'Banani', 15000),
+(203, 'Gulshan', 12000);
+
+INSERT INTO Depositor VALUES
+(1, 101), 
+(2, 102), 
+(3, 103), 
+(4, 104),
+(5, 105); 
+
+
+INSERT INTO Borrower VALUES
+(1, 201),
+(2, 202), 
+(3, 203); 
+
+
+
+
+
