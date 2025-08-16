@@ -5,6 +5,7 @@
 CREATE TABLE Employee (
     EmployeeID INT NOT NULL PRIMARY KEY,
     EmployeeName VARCHAR(50),
+    Street VARCHAR(50),
     City VARCHAR(50)
 );
 
@@ -39,15 +40,15 @@ CREATE TABLE Manages (
 --INSERTION
 
 INSERT INTO Employee VALUES
-(1, 'Anis', 'Dhaka'),
-(2, 'Akash', 'Dhaka'),
-(3, 'Sajid', 'Chittagong'),
-(4, 'Rifat', 'Sylhet'),
-(5, 'Shadhin', 'Khulna'),
-(6, 'Fahim', 'Barisal'),
-(7, 'Shihab', 'Rajshahi'),
-(8, 'Hasib', 'Dhaka'),
-(9, 'Rubaiyat', 'Dhaka');
+(1, 'Anis','street 1', 'Dhaka'),
+(2, 'Akash','street 2', 'Dhaka'),
+(3, 'Sajid','street 3', 'Chittagong'),
+(4, 'Rifat','street 3', 'Sylhet'),
+(5, 'Shadhin','street 4', 'Khulna'),
+(6, 'Fahim','street 6', 'Barisal'),
+(7, 'Shihab','street 5', 'Rajshahi'),
+(8, 'Hasib','street 7', 'Dhaka'),
+(9, 'Rubaiyat','street 8', 'Dhaka');
 
 
 INSERT INTO Company VALUES
